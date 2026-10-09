@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Repair Status | Campus IT Repair</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="/" class="brand-logo">
+        <span>⚙️</span> Campus IT Tech Repair
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Services</a></li>
+        <li><a href="/book.html">Book Service</a></li>
+        <li><a href="/status.html" class="active">Track Status</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="toast-container" class="toast-banner"></div>
+
+    <div class="page-header">
+      <h1 class="page-title">Check Booking Status</h1>
+      <p class="page-subtitle">Enter your reference code (e.g., BK123456) to view details</p>
+    </div>
+
+    <div class="form-card" style="margin-bottom: 2rem;">
+      <form id="search-form" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 200px;">
+          <input type="text" id="ref-input" class="form-control" placeholder="BK123456" style="text-transform: uppercase;">
+          <div id="ref-input-error" class="field-error"></div>
+        </div>
+        <button type="submit" id="search-btn" class="btn btn-primary">Lookup</button>
+      </form>
+    </div>
+
+    <div id="status-loading" class="state-box" style="display: none;">
+      <div class="spinner"></div>
+      <p>Searching records...</p>
+    </div>
+
+    <div id="status-result" class="form-card" style="display: none;">
+      <h2 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--text-primary); text-align: center;">Booking Information</h2>
+      
+      <div class="detail-list">
+        <div class="detail-item">
+          <span class="label">Reference</span>
+          <span id="res-ref" class="value" style="font-family: monospace; color: var(--color-accent);">-</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Status</span>
+          <span id="res-status" class="value">-</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Service Requested</span>
+          <span id="res-service" class="value">-</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Estimated Price</span>
+          <span id="res-price" class="value">-</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Scheduled Date</span>
+          <span id="res-date" class="value">-</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Scheduled Time</span>
+          <span id="res-time" class="value">-</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Client Name</span>
+          <span id="res-name" class="value">-</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Notes</span>
+          <span id="res-notes" class="value">-</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; School IT Department Repair Activity. All prices in Philippine Pesos (PHP).</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/status.js"></script>
+</body>
+</html>

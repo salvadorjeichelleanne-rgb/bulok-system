@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Campus IT Repair</title>
+  <link rel="stylesheet" href="/admin/css/admin.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header admin-header">
+    <div class="nav-container admin-nav">
+      <a href="/admin/dashboard.html" class="brand-logo">
+        <span>⚙️</span> IT Admin Portal
+      </a>
+      <div class="user-info">
+        <span class="admin-badge">Administrator</span>
+        <button id="logout-btn" class="btn btn-secondary btn-xs">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="toast-container" class="toast-banner"></div>
+
+    <div class="page-header" style="text-align: left; margin-bottom: 1.5rem;">
+      <h1 class="page-title">Bookings Management</h1>
+      <p class="page-subtitle">View, confirm, cancel, or remove student and staff repair appointments</p>
+    </div>
+
+    <!-- Stats Overview -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-label">Total Bookings</span>
+        <span id="stat-total" class="stat-value total">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Pending Review</span>
+        <span id="stat-pending" class="stat-value pending">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Confirmed</span>
+        <span id="stat-confirmed" class="stat-value confirmed">0</span>
+      </div>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-card">
+      <div class="search-box">
+        <input type="text" id="search-input" class="form-control" placeholder="Search reference, name, contact, or email...">
+      </div>
+      <div class="filter-box">
+        <select id="status-filter" class="form-control">
+          <option value="all">All Statuses</option>
+          <option value="pending">Pending</option>
+          <option value="confirmed">Confirmed</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Loading State -->
+    <div id="table-loading" class="state-box">
+      <div class="spinner"></div>
+      <p>Loading booking records...</p>
+    </div>
+
+    <!-- Empty State -->
+    <div id="table-empty" class="state-box" style="display: none;">
+      <p>No bookings found matching your criteria.</p>
+    </div>
+
+    <!-- Bookings Table -->
+    <div id="table-container" class="table-responsive" style="display: none;">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Reference</th>
+            <th>Service</th>
+            <th>Client Info</th>
+            <th>Schedule</th>
+            <th>Guests</th>
+            <th>Status</th>
+            <th style="text-align: right;">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="bookings-tbody"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; School IT Department Repair Activity. Secure Admin Portal.</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/admin/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "school-it-booking",
+  "version": "1.0.0",
+  "description": "School IT Department Computer Repair Booking System",
+  "main": "api/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node api/index.js",
+    "create-admin": "node scripts/create-admin.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.48.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2"
+  }
+}

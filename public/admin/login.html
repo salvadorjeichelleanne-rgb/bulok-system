@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | Campus IT Repair</title>
+  <link rel="stylesheet" href="/admin/css/admin.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="/" class="brand-logo">
+        <span>⚙️</span> Campus IT Repair Portal
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="toast-container" class="toast-banner"></div>
+
+    <div class="form-card" style="margin-top: 2rem;">
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <h1 class="page-title">Admin Authentication</h1>
+        <p class="page-subtitle">Enter credentials to manage school IT bookings</p>
+      </div>
+
+      <form id="login-form" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="username">Username <span class="required">*</span></label>
+          <input type="text" id="username" class="form-control" autocomplete="username" required>
+          <div id="username-error" class="field-error"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Password <span class="required">*</span></label>
+          <input type="password" id="password" class="form-control" autocomplete="current-password" required>
+          <div id="password-error" class="field-error"></div>
+        </div>
+
+        <button type="submit" id="login-btn" class="btn btn-primary btn-block">
+          Login to Dashboard
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; School IT Department Repair Activity. Secure Portal.</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/admin/js/login.js"></script>
+</body>
+</html>

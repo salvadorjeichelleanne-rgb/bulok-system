@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School IT Repair Shop | Schedule Appointment</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="/" class="brand-logo">
+        <span>⚙️</span> Campus IT Tech Repair
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Services</a></li>
+        <li><a href="/book.html" class="active">Book Service</a></li>
+        <li><a href="/status.html">Track Status</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="toast-container" class="toast-banner"></div>
+
+    <div class="page-header">
+      <h1 class="page-title">Book an IT Service</h1>
+      <p class="page-subtitle">Fill in your details to reserve a slot at the campus shop</p>
+    </div>
+
+    <div class="form-card">
+      <form id="booking-form" novalidate>
+        
+        <div class="form-group">
+          <label class="form-label" for="service_id">Select Service <span class="required">*</span></label>
+          <select id="service_id" class="form-control">
+            <option value="">Loading services...</option>
+          </select>
+          <div id="service_id-error" class="field-error"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="booking_date">Appointment Date <span class="required">*</span></label>
+          <input type="date" id="booking_date" class="form-control">
+          <div id="booking_date-error" class="field-error"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Select Time Slot (7:00 AM - 5:00 PM) <span class="required">*</span></label>
+          <input type="hidden" id="booking_time">
+          <div id="time-slots-grid" class="time-slots-container"></div>
+          <div id="booking_time-error" class="field-error"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="guests">Number of Devices/Guests <span class="required">*</span></label>
+          <input type="number" id="guests" class="form-control" value="1" min="1">
+          <div id="guests-error" class="field-error"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="name">Full Name <span class="required">*</span></label>
+          <input type="text" id="name" class="form-control" placeholder="e.g. Juan Dela Cruz">
+          <div id="name-error" class="field-error"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contact">Contact Number <span class="required">*</span></label>
+          <input type="tel" id="contact" class="form-control" placeholder="e.g. 09171234567">
+          <div id="contact-error" class="field-error"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address <span class="required">*</span></label>
+          <input type="email" id="email" class="form-control" placeholder="e.g. juan@school.edu.ph">
+          <div id="email-error" class="field-error"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="notes">Issue Description / Notes</label>
+          <textarea id="notes" class="form-control" placeholder="Describe the problem with your device (e.g. laptop won't turn on, fan noise)..."></textarea>
+          <div id="notes-error" class="field-error"></div>
+        </div>
+
+        <button type="submit" id="submit-btn" class="btn btn-primary btn-block">
+          Submit Booking
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; School IT Department Repair Activity. All prices in Philippine Pesos (PHP).</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/booking.js"></script>
+</body>
+</html>

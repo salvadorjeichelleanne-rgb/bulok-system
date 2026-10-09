@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmed | Campus IT Repair</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="/" class="brand-logo">
+        <span>⚙️</span> Campus IT Tech Repair
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Services</a></li>
+        <li><a href="/book.html">Book Service</a></li>
+        <li><a href="/status.html">Track Status</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="toast-container" class="toast-banner"></div>
+
+    <div class="form-card">
+      <div id="loading-state" class="state-box">
+        <div class="spinner"></div>
+        <p>Retrieving booking summary...</p>
+      </div>
+
+      <div id="confirmation-content" style="display: none;">
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+          <h1 class="page-title" style="color: var(--color-accent);">Booking Received!</h1>
+          <p class="page-subtitle">Save your reference code to check your repair appointment status</p>
+        </div>
+
+        <div class="ref-display">
+          <span style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase;">Reference Code</span>
+          <div id="ref-code" class="ref-code">------</div>
+          <button id="copy-btn" class="btn btn-secondary" style="margin-top: 0.5rem;">
+            Copy Reference Number
+          </button>
+        </div>
+
+        <div class="detail-list">
+          <div class="detail-item">
+            <span class="label">Service</span>
+            <span id="detail-service" class="value">-</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Price</span>
+            <span id="detail-price" class="value">-</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Date</span>
+            <span id="detail-date" class="value">-</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Time Slot</span>
+            <span id="detail-time" class="value">-</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Name</span>
+            <span id="detail-name" class="value">-</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Contact</span>
+            <span id="detail-contact" class="value">-</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Status</span>
+            <span id="detail-status" class="value">-</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+          <a href="/" class="btn btn-secondary btn-block">Return to Home</a>
+          <a href="/status.html" class="btn btn-primary btn-block">Check Status</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; School IT Department Repair Activity. All prices in Philippine Pesos (PHP).</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/confirmation.js"></script>
+</body>
+</html>

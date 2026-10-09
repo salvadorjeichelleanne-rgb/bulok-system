@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School IT Repair Shop | Available Services</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="/" class="brand-logo">
+        <span>⚙️</span> Campus IT Tech Repair
+      </a>
+      <ul class="nav-links">
+        <li><a href="/" class="active">Services</a></li>
+        <li><a href="/book.html">Book Service</a></li>
+        <li><a href="/status.html">Track Status</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="toast-container" class="toast-banner"></div>
+
+    <div class="page-header">
+      <h1 class="page-title">Hardware & Software Repair Services</h1>
+      <p class="page-subtitle">Select an IT service to schedule a appointment with our tech team</p>
+    </div>
+
+    <div id="services-loading" class="state-box">
+      <div class="spinner"></div>
+      <p>Loading active services...</p>
+    </div>
+
+    <div id="services-empty" class="state-box" style="display: none;">
+      <p>No repair services are currently available. Please check back later.</p>
+    </div>
+
+    <div id="services-grid" class="grid-cards" style="display: none;"></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; School IT Department Repair Activity. All prices in Philippine Pesos (PHP).</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/services.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - IT Repair Shop</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Portal</h1>
+    </header>
+    <main>
+        <div style="max-width: 400px; margin: 0 auto;">
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="username">Username</label>
+                <input type="text" id="username" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </main>
+    <script>
+        document.getElementById("login-form").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            
+            const res = await fetch("/api/admin/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username, password })
+            });
+            
+            const data = await res.json();
+            if(res.ok) {
+                window.location.href = "/admin/dashboard.html";
+            } else {
+                alert(data.error);
+            }
+        });
+    </script>
+</body>
+</html>
